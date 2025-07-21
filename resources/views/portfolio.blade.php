@@ -8,5 +8,5 @@
     @include('partials.skills')
     @include('partials.experience')
     @include('partials.projects')
-    {{-- @include('partials.contact') --}}
+    @include('partials.contact')
 @endsection
