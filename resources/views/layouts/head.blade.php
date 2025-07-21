@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 {{-- SEO Meta Tags --}}
-<title>{{ $title ?? 'Christian David Moreno - Full Stack Developer Portfolio' }}</title>
+<title>{{ $title ?? 'Christian David Moreno' }}</title>
 <meta name="description"
     content="{{ $description ?? 'Experienced Full Stack Developer specializing in Laravel, Vue.js, and modern web technologies. Explore my portfolio of innovative web applications and digital solutions.' }}">
 <meta name="keywords"
@@ -15,7 +15,7 @@
 {{-- Open Graph / Facebook --}}
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ url()->current() }}">
-<meta property="og:title" content="{{ $title ?? 'Christian David Moreno - Full Stack Developer' }}">
+<meta property="og:title" content="{{ $title ?? 'Christian David Moreno' }}">
 <meta
     property="og:description"content="{{ $description ?? 'Experienced Full Stack Developer portfolio showcasing innovative web solutions.' }}">
 

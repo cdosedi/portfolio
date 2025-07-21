@@ -555,7 +555,7 @@
                             bar.style.width = level + '%';
                         }, barIndex * 150); // Stagger skill bars within a card
                     });
-                }, 700 + index * 300); // Initial delay + staggered delay for each card
+                }, 400 + index * 100); // Initial delay + staggered delay for each card
             });
         }
 
