@@ -117,8 +117,8 @@
                 const response = await fetch(form.action, {
                     method: 'POST',
                     headers: {
-                        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]')
-                            .value,
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')
+                            .getAttribute('content'),
                         'Accept': 'application/json'
                     },
                     body: formData
@@ -164,13 +164,13 @@
             const messageDiv = document.createElement('div');
             messageDiv.className = `mb-6 p-4 ${bgColor} border ${borderColor} rounded-lg ${textColor}`;
             messageDiv.innerHTML = `
-                <div class="flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="${iconPath}" clip-rule="evenodd"></path>
-                    </svg>
-                    ${msg}
-                </div>
-            `;
+            <div class="flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="${iconPath}" clip-rule="evenodd"></path>
+                </svg>
+                ${msg}
+            </div>
+        `;
 
             messageContainer.appendChild(messageDiv);
 

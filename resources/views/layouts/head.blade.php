@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 {{-- SEO Meta Tags --}}
 <title>{{ $title ?? 'Christian David Moreno' }}</title>
 <meta name="description"
