@@ -13,7 +13,7 @@
         </div>
 
         <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 md:p-10">
-            {{-- Success/Error Messages --}}
+            {{-- Success/Error Messages - Moved to top of card --}}
             <div id="message-container">
                 @if (session('success'))
                     <div class="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-100">
@@ -128,9 +128,6 @@
                 if (response.ok) {
                     // Success
                     form.reset();
-                    // Reset textarea height
-                    messageTextarea.style.height = 'auto';
-                    autoResizeTextarea(messageTextarea);
                     showMessage(result.message, 'success');
                 } else {
                     // Validation or server error
@@ -177,6 +174,7 @@
 
             messageContainer.appendChild(messageDiv);
 
+            // Scroll to top of the card to show the message
             messageContainer.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
@@ -189,30 +187,10 @@
             textarea.style.height = textarea.scrollHeight + 'px';
         }
 
-        // Capitalize first letter of each sentence
-        function capitalizeText(text) {
-            return text.replace(/(^\w|\.\s*\w)/gm, function(txt) {
-                return txt.toUpperCase();
-            });
-        }
-
-        // Initialize textarea auto-resize and capitalization
+        // Initialize textarea auto-resize
         const messageTextarea = document.getElementById('message');
-        const nameInput = document.getElementById('name');
-        const subjectInput = document.getElementById('subject');
-
-        // Auto-resize functionality
         messageTextarea.addEventListener('input', function() {
             autoResizeTextarea(this);
-        });
-
-        // Auto-capitalize functionality for name, subject, and message
-        [nameInput, subjectInput, messageTextarea].forEach(input => {
-            input.addEventListener('blur', function() {
-                if (this.value) {
-                    this.value = capitalizeText(this.value);
-                }
-            });
         });
 
         // Set initial height based on content
