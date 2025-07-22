@@ -4,20 +4,38 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-{{-- SEO Meta Tags --}}
-<title>{{ $title ?? 'Christian David Moreno' }}</title>
+{{-- Enhanced SEO Meta Tags --}}
+<title>{{ $title ?? 'Christian David Moreno - Full Stack Developer' }}</title>
 <meta name="description"
     content="{{ $description ?? 'Experienced Full Stack Developer specializing in Laravel, Vue.js, and modern web technologies. Explore my portfolio of innovative web applications and digital solutions.' }}">
 <meta name="keywords"
-    content="Full Stack Developer, Laravel, Vue.js, PHP, JavaScript, Web Development, Portfolio, Christian David Moreno">
+    content="Full Stack Developer, Laravel, Vue.js, PHP, JavaScript, Web Development, Portfolio, Christian David Moreno, Web Applications, Digital Solutions">
 <meta name="author" content="Christian David Moreno">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ url()->current() }}">
 
 {{-- Open Graph / Facebook --}}
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ url()->current() }}">
-<meta property="og:title" content="{{ $title ?? 'Christian David Moreno' }}">
-<meta
-    property="og:description"content="{{ $description ?? 'Experienced Full Stack Developer portfolio showcasing innovative web solutions.' }}">
+<meta property="og:title" content="{{ $title ?? 'Christian David Moreno - Full Stack Developer' }}">
+<meta property="og:description"
+    content="{{ $description ?? 'Experienced Full Stack Developer portfolio showcasing innovative web solutions.' }}">
+<meta property="og:image" content="{{ asset('images/og-image.jpg') }}">
+<meta property="og:site_name" content="Christian David Moreno">
+
+{{-- Twitter Card --}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ url()->current() }}">
+<meta name="twitter:title" content="{{ $title ?? 'Christian David Moreno - Full Stack Developer' }}">
+<meta name="twitter:description"
+    content="{{ $description ?? 'Experienced Full Stack Developer portfolio showcasing innovative web solutions.' }}">
+<meta name="twitter:image" content="{{ asset('images/og-image.jpg') }}">
+
+{{-- Additional SEO Meta --}}
+<meta name="geo.region" content="PH-LAP">
+<meta name="geo.placename" content="Lapu-Lapu City">
+<meta name="geo.position" content="10.3103;123.9494">
+<meta name="ICBM" content="10.3103, 123.9494">
 
 {{-- Fonts with fallbacks --}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
