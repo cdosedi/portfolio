@@ -10,7 +10,7 @@
     </div>
     <div id="preloader-text"
         class="absolute text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold">
-        <span class="font-montserrat tracking-wider">C.D.MORENO</span>
+        <span class="font-montserrat tracking-wider">CDM</span>
     </div>
 </div>
 

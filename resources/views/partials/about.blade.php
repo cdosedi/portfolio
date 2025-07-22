@@ -74,12 +74,6 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent rounded-2xl">
                         </div>
-
-                        {{-- Text Overlay --}}
-                        <div class="absolute bottom-8 left-8 right-8 text-center">
-                            <h3 class="text-xl font-semibold text-white mb-2">Christian David D. Moreno</h3>
-                            <p class="text-gray-300">IT Professional & Developer</p>
-                        </div>
                     </div>
                 </div>
 
