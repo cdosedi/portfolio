@@ -20,8 +20,8 @@
                     </p>
 
                     <p>
-                        Throughout my academic journey, I led multiple system development projects—including
-                        a Learning Management System and various booking and management platforms—showcasing
+                        Throughout my academic journey, I led multiple system development projects including
+                        a Learning Management System and various booking and management platforms showcasing
                         both my technical expertise and leadership skills. I've also gained valuable experience
                         through internships and freelance work, where I provided full-stack development and
                         IT support for real-world clients.
