@@ -12,7 +12,10 @@
     content="Full Stack Developer, Laravel, Vue.js, PHP, JavaScript, Web Development, Portfolio, Christian David Moreno, Web Applications, Digital Solutions">
 <meta name="author" content="Christian David Moreno">
 <meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="RqrhwFxNlHXp3K_Yg_aL5EDSV2ib_KJeBEAIFYZ_MhI" />
+<meta name="msvalidate.01" content="C5D56FC0721F1A3A6CFE42F606491C6D" />
 <link rel="canonical" href="{{ url()->current() }}">
+
 
 {{-- Open Graph / Facebook --}}
 <meta property="og:type" content="website">
