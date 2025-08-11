@@ -22,24 +22,22 @@
                             Moreno</h3>
                     </div>
                     <p class="text-gray-300 mb-7 max-w-lg leading-relaxed text-base">
-                        Recent IT graduate skilled in software and web development, system design, and IT support.
+                        Passionate Web Developer skilled in software and web development, system design, and IT support.
                         Specialized in building POS systems and web platforms using Laravel, Python, and Tailwind CSS.
                         Passionate about solving real-world problems through clean, efficient code.
                     </p>
-
-                    {{-- Social Links --}}
                     <div class="flex space-x-4 mt-6">
                         @php
                             $socialLinks = [
                                 [
-                                    'href' => 'https://github.com/christiandavidmoreno',
-                                    'icon' => 'github',
-                                    'label' => 'GitHub',
-                                ],
-                                [
                                     'href' => 'https://www.linkedin.com/in/christian-david-moreno-02ab55265',
                                     'icon' => 'linkedin',
                                     'label' => 'LinkedIn',
+                                ],
+                                [
+                                    'href' => 'https://www.upwork.com/freelancers/~013d5c47bb7d04323b',
+                                    'icon' => 'upwork',
+                                    'label' => 'Upwork',
                                 ],
                                 [
                                     'href' => 'mailto:cdocdmoreno@gmail.com',
@@ -55,15 +53,17 @@
                                 rel="noopener noreferrer"
                                 class="w-11 h-11 bg-gray-800 hover:bg-gradient-to-r hover:from-indigo-500 hover:to-pink-500 text-gray-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg"
                                 aria-label="{{ $social['label'] }}">
-                                @if ($social['icon'] === 'github')
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.547-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604C6.095 15.713 3.293 14.684 3.293 9.087c0-1.311.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.009-.322 3.301 1.23a11.55 11.55 0 0 1 6.002 0c2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.236 1.911 1.236 3.221 0 5.61-3.288 6.619-6.42 6.963.429.372.823 1.102.823 2.222v3.293c0 .319.193.694.801.576C20.565 21.8 24 17.302 24 12c0-6.627-5.373-12-12-12z" />
-                                    </svg>
-                                @elseif($social['icon'] === 'linkedin')
+                                @if ($social['icon'] === 'linkedin')
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                         <path
                                             d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433C4.193 7.433 3.274 6.507 3.274 5.369c0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.138-.925 2.064-2.064 2.064zm1.782 13.019H3.555V9h3.564v11.452z" />
+                                    </svg>
+                                @elseif($social['icon'] === 'upwork')
+                                    <svg width="800px" height="800px" viewBox="0 0 1024 1024" class="w-5 h-5">
+                                        <circle cx="512" cy="512" r="512" style="fill:#14a800" />
+                                        <path
+                                            d="M362.26 544.5c-18.49 0-30.73-14-34.15-19.43 4.38-34.33 17.2-45.18 34.15-45.18C379 479.88 392 493 392 512.19s-13 32.31-29.74 32.31zm0-85.69c-30.15 0-47 19.25-51.87 39.06-5.48-10.1-9.54-23.6-12.69-36.16H256v50.79c0 18.42-8.57 32.05-25.32 32.05s-26.35-13.63-26.35-32.05l.19-50.79h-24v50.79c0 14.83 4.9 28.27 13.85 37.86 9.21 9.91 21.78 15.08 36.34 15.08 29 0 49.23-21.77 49.23-52.94v-34.13c3 11.23 10.24 32.81 24 51.74L291.06 602h24.42l8.5-50.92a66.79 66.79 0 0 0 8.89 6.12 55.15 55.15 0 0 0 27.19 8.2s1.48.06 2.26.06c29.9 0 53.67-22.65 53.67-53.26s-23.83-53.39-53.73-53.39zm345.29 13.75v-10.85H684v100.52h23.9v-39.38c0-24.23 2.26-41.64 35.44-39.37v-23c-15.49-1.1-27.54 2.05-35.79 12.08zm-166-10.85L524.26 532l-18.49-70.29h-30.42L456.8 532l-17.27-70.29H415.3l26.55 100.58h28.74l20-71.43 19.78 71.43h28.74l28.09-100.58zm78.22 82.85c-17 0-29.77-13.12-29.77-32.37s12.82-32.31 29.77-32.31c16.75 0 29.77 13.12 29.77 32.31s-12.98 32.37-29.73 32.37zm0-85.75c-30.09 0-53.67 22.84-53.67 53.38s23.58 53.19 53.67 53.19c29.9 0 53.67-22.65 53.67-53.19s-23.67-53.38-53.63-53.38zm157.78 54h5.54l33.38 49.47h27l-38.4-54.83c18.62-7.13 31.12-25.74 31.12-45.75h-23.81c0 21.71-17.46 29.91-34.79 29.91V422h-24v140.29h23.9z"
+                                            style="fill:#fff" />
                                     </svg>
                                 @elseif($social['icon'] === 'email')
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

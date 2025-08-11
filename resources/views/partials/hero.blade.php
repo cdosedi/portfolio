@@ -41,83 +41,82 @@
     </div>
 
     {{-- Main Content Container --}}
-    <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex flex-col min-h-screen justify-center">
-        <div class="space-y-8 flex-grow flex flex-col justify-center pt-16 md:pt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col min-h-screen justify-center pt-8">
+        <div class="flex flex-col md:flex-row items-center md:items-center justify-center gap-10 pt-16 md:pt-20">
 
-            {{-- Main heading --}}
-            <div class="space-y-4">
-                <h1
-                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-montserrat font-light text-white leading-tight">
-                    <span class="hero-text-element block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-2"
-                        data-animation="fadeInLeft" data-delay="200">Hello I'm</span>
-                    <span
-                        class="hero-text-element block font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-                        data-animation="fadeInRight" data-delay="400">Christian David</span>
-                    <span
-                        class="hero-text-element block font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-400 bg-clip-text text-transparent"
-                        data-animation="fadeInLeft" data-delay="600">Moreno</span>
-                </h1>
+            {{-- LEFT: Profile Image --}}
+            <div class="w-full md:w-1/2 flex justify-center">
+                <img src="{{ asset('images/profile2.png') }}" alt="Christian David Moreno"
+                    class="rounded-2xl max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-cover">
             </div>
 
-            {{-- Subtitle --}}
-            <div class="max-w-3xl mx-auto">
-                <p class="hero-text-element text-xl md:text-2xl text-gray-300 font-light leading-relaxed"
-                    data-animation="fadeInUp" data-delay="800">
-                    Passionate Developer crafting innovative web experiences with passion for
-                    <span class="text-blue-400 font-medium">clean code</span> and
-                    <span class="text-purple-400 font-medium">elegant design</span>
-                </p>
-            </div>
+            {{-- RIGHT: Hero Text Content --}}
+            <div class="w-full md:w-1/2 space-y-8 text-center md:text-left">
+                {{-- Main heading --}}
+                <div class="space-y-4">
+                    <h1
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-montserrat font-light text-white leading-tight">
+                        <span
+                            class="hero-text-element block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-2"
+                            data-animation="fadeInLeft" data-delay="200">Hello I'm</span>
+                        <span
+                            class="hero-text-element block font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                            data-animation="fadeInRight" data-delay="400">Christian David</span>
+                        <span
+                            class="hero-text-element block font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-400 bg-clip-text text-transparent"
+                            data-animation="fadeInLeft" data-delay="600">Moreno</span>
+                    </h1>
+                </div>
 
-            {{-- Specialties --}}
-            <div class="flex flex-wrap justify-center gap-4">
-                @php
-                    $specialties = [
-                        'Laravel',
-                        'Python',
-                        'Vue.js',
-                        'React',
-                        'Node.js',
-                        'PHP',
-                        'JavaScript',
-                        'Tailwind CSS',
-                    ];
-                @endphp
+                {{-- Subtitle --}}
+                <div class="max-w-2x">
+                    <p class="hero-text-element text-lg sm:text-xl md:text-2xl text-gray-300 font-light leading-relaxed"
+                        data-animation="fadeInUp" data-delay="800">
+                        Passionate Developer crafting innovative web experiences with passion for
+                        <span class="text-blue-400 font-medium">clean code</span> and
+                        <span class="text-purple-400 font-medium">elegant design</span>
+                    </p>
+                </div>
 
-                @foreach ($specialties as $index => $specialty)
-                    <span
-                        class="hero-specialty-element px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-full text-sm text-gray-300 hover:text-white hover:border-blue-500 transition-all duration-500 transform hover:scale-105"
-                        data-delay="{{ 1000 + $index * 80 }}">{{ $specialty }}</span>
-                @endforeach
-            </div>
-
-            {{-- CTA Buttons --}}
-            <div class="hero-text-element flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 pb-12 md:pb-16 lg:pb-20"
-                data-animation="fadeInUp" data-delay="1600">
-                <a href="#projects"
-                    class="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-500 transform hover:scale-105 flex items-center shadow-lg hover:shadow-xl">
-                    <span>Explore My Work</span>
-                    <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-500"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </a>
-
-                <a href="#contact"
-                    class="group border-2 border-gray-600 hover:border-white text-gray-300 hover:text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-500 transform hover:scale-105 flex items-center">
-                    <svg class="w-5 h-5 mr-2 transform group-hover:scale-110 transition-transform duration-500"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
-                    <span>Let's Talk</span>
-                </a>
+                {{-- Specialties --}}
+                <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                    @php
+                        $specialties = ['Laravel', 'Python', 'Vue.js', 'React', 'PHP', 'JavaScript', 'Tailwind CSS'];
+                    @endphp
+                    @foreach ($specialties as $index => $specialty)
+                        <span
+                            class="hero-specialty-element px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-full text-xs text-gray-300 hover:text-white hover:border-blue-500 transition-all duration-500 transform hover:scale-105"
+                            data-delay="{{ 1000 + $index * 80 }}">{{ $specialty }}</span>
+                    @endforeach
+                </div>
             </div>
         </div>
 
-        {{-- Scroll indicator --}}
+        {{-- CTA Buttons (full width, centered) --}}
+        <div class="hero-text-element flex flex-col sm:flex-row gap-4 justify-center items-center pt-16 pb-12 md:pb-16 lg:pb-20"
+            data-animation="fadeInUp" data-delay="1600">
+            <a href="#projects"
+                class="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-full text-base font-medium transition-all duration-500 transform hover:scale-105 flex items-center shadow-lg hover:shadow-xl">
+                <span>Explore My Work</span>
+                <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-500"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+
+            <a href="#contact"
+                class="group border-2 border-gray-600 hover:border-white text-gray-300 hover:text-white px-6 py-3 rounded-full text-base font-medium transition-all duration-500 transform hover:scale-105 flex items-center">
+                <svg class="w-4 h-4 mr-2 transform group-hover:scale-110 transition-transform duration-500"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                <span>Let's Talk</span>
+            </a>
+        </div>
+
+        {{-- Scroll Indicator --}}
         <div class="hero-text-element flex-shrink-0 pb-10 md:pb-12 lg:pb-16" data-animation="fadeInUp"
             data-delay="1800">
             <div class="flex flex-col items-center text-gray-400 animate-bounce-smooth cursor-pointer transition-colors duration-500 hover:text-white"
@@ -130,6 +129,7 @@
             </div>
         </div>
     </div>
+
 
     {{-- Floating code snippets --}}
     <div class="absolute top-1/4 left-10 opacity-20 hidden lg:block">

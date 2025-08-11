@@ -58,15 +58,19 @@
 
             <div class="relative">
                 <div class="aspect-square bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-1">
-                    {{-- Fixed container with proper image fitting --}}
                     <div class="w-full h-full bg-gray-900 rounded-2xl overflow-hidden relative">
-                        {{-- Image Container with proper positioning --}}
                         <div class="absolute inset-0 image-container">
+                            {{-- Slideshow of images --}}
+                            <img src="{{ asset('images/profile1.jpg') }}" alt="Christian David D. Moreno - Photoshoot"
+                                class="profile-image w-full h-full object-cover rounded-2xl transition-opacity duration-1000 ease-in-out absolute inset-0 opacity-100"
+                                style="object-position: center center;">
+
                             <img src="{{ asset('images/myprofile3.png') }}" alt="Christian David D. Moreno - Profile"
-                                class="profile-image profile-image-1 w-full h-full object-cover rounded-2xl opacity-100 transition-opacity duration-2000 ease-in-out"
+                                class="profile-image w-full h-full object-cover rounded-2xl transition-opacity duration-1000 ease-in-out absolute inset-0 opacity-0"
                                 style="object-position: center top;">
+
                             <img src="{{ asset('images/grad.jpeg') }}" alt="Christian David D. Moreno - Graduation"
-                                class="profile-image profile-image-2 w-full h-full object-cover rounded-2xl opacity-0 transition-opacity duration-2000 ease-in-out absolute inset-0"
+                                class="profile-image w-full h-full object-cover rounded-2xl transition-opacity duration-1000 ease-in-out absolute inset-0 opacity-0"
                                 style="object-position: center center;">
                         </div>
 
@@ -95,135 +99,63 @@
 <style>
     .image-container {
         position: relative;
-        /* Ensure no gaps */
         width: 100%;
         height: 100%;
     }
 
     .profile-image {
-        /* Ensure images fill the container completely */
+
         object-fit: cover;
-        /* Remove any potential margin/padding */
         margin: 0;
         padding: 0;
-        /* Ensure pixel-perfect fitting */
         display: block;
     }
 
-    .profile-image-1 {
-        object-position: center top;
-    }
-
-    .profile-image-2 {
-        object-position: center center;
-    }
-
     .image-container img {
-        /* Force exact dimensions */
         width: 100% !important;
         height: 100% !important;
-        /* Ensure no gaps */
         vertical-align: top;
-        /* Remove any browser default spacing */
         border: none;
         outline: none;
-    }
-
-    /* Smoother animation for image switching */
-    @keyframes imageSwitch {
-
-        0%,
-        40% {
-            opacity: 1;
-        }
-
-        45%,
-        55% {
-            opacity: 0;
-        }
-
-        60%,
-        100% {
-            opacity: 0;
-        }
-    }
-
-    @keyframes imageSwitchSecond {
-
-        0%,
-        40% {
-            opacity: 0;
-        }
-
-        45%,
-        95% {
-            opacity: 1;
-        }
-
-        100% {
-            opacity: 0;
-        }
-    }
-
-    .image-container .profile-image-1 {
-        animation: imageSwitch 10s infinite ease-in-out;
-    }
-
-    .image-container .profile-image-2 {
-        animation: imageSwitchSecond 10s infinite ease-in-out;
-    }
-
-    /* Debug helper - remove after fixing */
-    .debug-container {
-        border: 2px solid red !important;
-    }
-
-    .debug-image {
-        border: 2px solid blue !important;
     }
 </style>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Smooth image switching with longer intervals
         const images = document.querySelectorAll('.profile-image');
         let currentIndex = 0;
+        const intervalTime = 3000;
+        let slideshowInterval;
 
         function switchImages() {
-            // Fade out current image
-            images[currentIndex].style.opacity = '0';
+            images[currentIndex].classList.remove('opacity-100');
+            images[currentIndex].classList.add('opacity-0');
 
-            // Switch to next image
             currentIndex = (currentIndex + 1) % images.length;
 
-            // Fade in next image with delay for smoother transition
-            setTimeout(() => {
-                images[currentIndex].style.opacity = '1';
-            }, 1000); // 1 second delay for smoother crossfade
+            images[currentIndex].classList.remove('opacity-0');
+            images[currentIndex].classList.add('opacity-100');
         }
 
-        // Switch images every 8 seconds for more comfortable viewing
-        setInterval(switchImages, 8000);
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
 
-        // Debug function - call this in console to see gaps
-        window.debugImageContainer = function() {
-            const container = document.querySelector('.image-container');
-            const images = document.querySelectorAll('.profile-image');
-
-            console.log('Container dimensions:', {
-                width: container.offsetWidth,
-                height: container.offsetHeight
+                    if (!slideshowInterval) {
+                        slideshowInterval = setInterval(switchImages, intervalTime);
+                    }
+                } else {
+                    clearInterval(slideshowInterval);
+                    slideshowInterval = null;
+                }
             });
+        }, {
+            threshold: 0.5
+        });
 
-            images.forEach((img, index) => {
-                console.log(`Image ${index + 1} dimensions:`, {
-                    naturalWidth: img.naturalWidth,
-                    naturalHeight: img.naturalHeight,
-                    displayWidth: img.offsetWidth,
-                    displayHeight: img.offsetHeight,
-                    aspectRatio: img.naturalWidth / img.naturalHeight
-                });
-            });
-        };
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+            observer.observe(aboutSection);
+        }
     });
 </script>

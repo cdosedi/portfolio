@@ -188,7 +188,7 @@
             scrollTimer = setTimeout(setActiveNav, 10);
         });
 
-        setActiveNav(); // Call once on load
+        setActiveNav();
 
         // Close mobile menu when clicking on links
         mobileNavLinks.forEach(link => {
@@ -217,7 +217,7 @@
                 const targetSection = document.getElementById(targetId);
 
                 if (targetSection) {
-                    const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                    const offsetTop = targetSection.offsetTop - 80;
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -233,7 +233,7 @@
                 const targetSection = document.getElementById(targetId);
 
                 if (targetSection) {
-                    const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                    const offsetTop = targetSection.offsetTop - 80;
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'

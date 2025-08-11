@@ -13,7 +13,6 @@
         </div>
 
         <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 md:p-10">
-            {{-- Success/Error Messages - Moved to top of card --}}
             <div id="message-container">
                 @if (session('success'))
                     <div class="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-100">
@@ -102,7 +101,7 @@
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.innerHTML;
         const messageContainer = document.getElementById('message-container');
-        const messageTextarea = document.getElementById('message'); // Get the textarea element
+        const messageTextarea = document.getElementById('message');
 
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -131,7 +130,7 @@
                     form.reset();
                     showMessage(result.message, 'success');
                     // Reset textarea height to its original state after successful submission
-                    messageTextarea.style.height = 'auto'; // Or whatever its default height is
+                    messageTextarea.style.height = 'auto';
                 } else {
                     // Validation or server error
                     if (result.errors) {

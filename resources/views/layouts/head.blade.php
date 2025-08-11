@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 {{-- Enhanced SEO Meta Tags --}}
-<title>{{ $title ?? 'Christian David Moreno - Full Stack Developer' }}</title>
+<title>{{ $title ?? 'Christian David Moreno - Web Developer | System Design & IT Solutions' }}</title>
 <meta name="description"
-    content="{{ $description ?? 'Experienced Full Stack Developer specializing in Laravel, Vue.js, and modern web technologies. Explore my portfolio of innovative web applications and digital solutions.' }}">
+    content="{{ $description ?? 'Experienced Web Developer | System Design & IT Solutions | Turning Ideas into Scalable Digital Reality' }}">
 <meta name="keywords"
-    content="Full Stack Developer, Laravel, Vue.js, PHP, JavaScript, Web Development, Portfolio, Christian David Moreno, Web Applications, Digital Solutions">
+    content="Full Stack Developer, Laravel, Vue.js, PHP, JavaScript, Web Development, Portfolio, Christian David Moreno, Web Applications, Digital Solutions, Web Developer, System Design & IT Solutions">
 <meta name="author" content="Christian David Moreno">
 <meta name="robots" content="index, follow">
 <meta name="google-site-verification" content="RqrhwFxNlHXp3K_Yg_aL5EDSV2ib_KJeBEAIFYZ_MhI" />
@@ -22,8 +22,8 @@
 <meta property="og:url" content="{{ url()->current() }}">
 <meta property="og:title" content="{{ $title ?? 'Christian David Moreno - Full Stack Developer' }}">
 <meta property="og:description"
-    content="{{ $description ?? 'Experienced Full Stack Developer portfolio showcasing innovative web solutions.' }}">
-<meta property="og:image" content="{{ asset('images/og-image.jpg') }}">
+    content="{{ $description ?? 'Experienced Web Developer | System Design & IT Solutions | Turning Ideas into Scalable Digital Reality' }}">
+<meta property="og:image" content="{{ asset('images/myprofile3.png') }}">
 <meta property="og:site_name" content="Christian David Moreno">
 
 {{-- Twitter Card --}}
@@ -31,8 +31,8 @@
 <meta name="twitter:url" content="{{ url()->current() }}">
 <meta name="twitter:title" content="{{ $title ?? 'Christian David Moreno - Full Stack Developer' }}">
 <meta name="twitter:description"
-    content="{{ $description ?? 'Experienced Full Stack Developer portfolio showcasing innovative web solutions.' }}">
-<meta name="twitter:image" content="{{ asset('images/og-image.jpg') }}">
+    content="{{ $description ?? 'Experienced Web Developer | System Design & IT Solutions | Turning Ideas into Scalable Digital Reality' }}">
+<meta name="twitter:image" content="{{ asset('images/myprofile3.png') }}">
 
 {{-- Additional SEO Meta --}}
 <meta name="geo.region" content="PH-LAP">

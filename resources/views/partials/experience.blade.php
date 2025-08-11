@@ -14,7 +14,6 @@
 
         {{-- Experience Timeline --}}
         <div class="relative">
-            {{-- Timeline line --}}
             <div
                 class="absolute left-1/2 transform -translate-x-0.5 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 opacity-30 rounded-full md:block hidden">
             </div>
@@ -205,7 +204,6 @@
     </div>
 </section>
 
-{{-- Custom CSS for Experience Animations --}}
 <style>
     /* Experience card animations */
     @keyframes slideInFromLeft {
@@ -332,13 +330,12 @@
                         animateCards();
                     }
                 } else {
-                    // Optionally reset when scrolling out of view
                     clearAnimationTimeouts();
                     resetCards();
                 }
             });
         }, {
-            threshold: 0.2, // Adjust if cards are not animating at the right time
+            threshold: 0.2,
         });
 
         if (experienceSection) {
