@@ -8,7 +8,7 @@
         @endfor
     </div>
     <div id="preloader-text"
-        class="absolute text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold">
+        class="absolute text-white text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl font-extrabold">
         <span class="font-montserrat tracking-wider">CDM</span>
     </div>
 </div>
