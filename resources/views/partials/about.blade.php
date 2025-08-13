@@ -41,6 +41,23 @@
                     </p>
                 </div>
 
+                <!-- Education Section -->
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold text-white">Education</h3>
+                    <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>
+                            <strong class="text-blue-400">Tertiary:</strong> Bachelor of Science in Information
+                            Technology
+                            <span class="block text-sm text-gray-400">Year Graduated: 2025</span>
+                        </li>
+                        <li>
+                            <strong class="text-blue-400">Senior High:</strong> Accountancy and Business Management
+                            <span class="block text-sm text-gray-400">Year Graduated: 2019</span>
+                        </li>
+                    </ul>
+                </div>
+
                 <div class="flex flex-wrap gap-4">
                     <span class="px-4 py-2 bg-blue-600/20 text-blue-400 rounded-full text-sm border border-blue-600/30">
                         Full-Stack Developer
@@ -150,7 +167,7 @@
                 }
             });
         }, {
-            threshold: 0.5
+            threshold: 0.1
         });
 
         const aboutSection = document.getElementById('about');

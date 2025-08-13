@@ -1,6 +1,5 @@
 {{-- resources/views/partials/hero.blade.php --}}
 
-{{-- START: New Preloader HTML --}}
 
 <div id="hero-preloader" class="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-gray-900">
     <div class="preloader-gate-container">
@@ -9,19 +8,15 @@
         @endfor
     </div>
     <div id="preloader-text"
-        class="absolute text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold">
+        class="absolute text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold">
         <span class="font-montserrat tracking-wider">CDM</span>
     </div>
 </div>
 
-{{-- END: New Preloader HTML --}}
-
 
 
 <section id="hero" class="hero-section min-h-screen flex items-center justify-center relative overflow-hidden">
-    {{-- Background Elements --}}
     <div class="absolute inset-0 -z-10">
-        {{-- Animated geometric shapes --}}
         <div
             class="absolute top-20 left-10 w-20 h-20 border-2 border-blue-500/30 rounded-lg rotate-45 animate-spin-slow">
         </div>
@@ -32,7 +27,6 @@
         <div class="absolute bottom-20 right-32 w-12 h-12 bg-blue-500/20 transform rotate-45 animate-pulse-smooth">
         </div>
 
-        {{-- Floating particles --}}
         @for ($i = 0; $i < 15; $i++)
             <div class="particle absolute w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-60"
                 style="left: {{ rand(0, 100) }}%; top: {{ rand(0, 100) }}%; animation-delay: {{ $i * 0.3 }}s;">
@@ -40,19 +34,15 @@
         @endfor
     </div>
 
-    {{-- Main Content Container --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col min-h-screen justify-center pt-8">
         <div class="flex flex-col md:flex-row items-center md:items-center justify-center gap-10 pt-16 md:pt-20">
 
-            {{-- LEFT: Profile Image --}}
             <div class="w-full md:w-1/2 flex justify-center">
                 <img src="{{ asset('images/profile2.png') }}" alt="Christian David Moreno"
                     class="rounded-2xl max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-cover">
             </div>
 
-            {{-- RIGHT: Hero Text Content --}}
             <div class="w-full md:w-1/2 space-y-8 text-center md:text-left">
-                {{-- Main heading --}}
                 <div class="space-y-4">
                     <h1
                         class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-montserrat font-light text-white leading-tight">
@@ -68,7 +58,6 @@
                     </h1>
                 </div>
 
-                {{-- Subtitle --}}
                 <div class="max-w-2x">
                     <p class="hero-text-element text-lg sm:text-xl md:text-2xl text-gray-300 font-light leading-relaxed"
                         data-animation="fadeInUp" data-delay="800">
@@ -78,7 +67,6 @@
                     </p>
                 </div>
 
-                {{-- Specialties --}}
                 <div class="flex flex-wrap justify-center md:justify-start gap-3">
                     @php
                         $specialties = ['Laravel', 'Python', 'Vue.js', 'React', 'PHP', 'JavaScript', 'Tailwind CSS'];
@@ -92,7 +80,6 @@
             </div>
         </div>
 
-        {{-- CTA Buttons (full width, centered) --}}
         <div class="hero-text-element flex flex-col sm:flex-row gap-4 justify-center items-center pt-16 pb-12 md:pb-16 lg:pb-20"
             data-animation="fadeInUp" data-delay="1600">
             <a href="#projects"
@@ -116,7 +103,6 @@
             </a>
         </div>
 
-        {{-- Scroll Indicator --}}
         <div class="hero-text-element flex-shrink-0 pb-10 md:pb-12 lg:pb-16" data-animation="fadeInUp"
             data-delay="1800">
             <div class="flex flex-col items-center text-gray-400 animate-bounce-smooth cursor-pointer transition-colors duration-500 hover:text-white"
@@ -131,7 +117,6 @@
     </div>
 
 
-    {{-- Floating code snippets --}}
     <div class="absolute top-1/4 left-10 opacity-20 hidden lg:block">
         <div
             class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-4 text-xs text-green-400 font-mono transform rotate-6 animate-float transition-all duration-700 hover:opacity-40">
@@ -153,7 +138,6 @@
     </div>
 </section>
 
-{{-- Custom CSS for hero animations --}}
 <style>
     /* ================================================== */
     /* START: New Preloader CSS */
@@ -169,13 +153,11 @@
         visibility: hidden;
     }
 
-    /* When fading out, slide the bars up */
     #hero-preloader.fade-out .preloader-gate-bar {
         transform: translateY(-100%);
         transition: transform 1.8s cubic-bezier(0.76, 0, 0.24, 1);
     }
 
-    /* Fade out the text slightly before the bars move */
     #hero-preloader.fade-out #preloader-text {
         opacity: 0;
         transform: scale(0.9);
@@ -203,19 +185,14 @@
         box-shadow: 0 0 25px rgba(142, 45, 226, 0.3);
         transform-origin: center;
         transform: scaleY(0);
-        /* Decreased transition duration for individual bar animation to make it faster */
         transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
-        /* Decreased animation duration for a faster pulse */
         animation: preloader-bar-anim 2s cubic-bezier(0.76, 0, 0.24, 1) infinite alternate;
     }
 
-    /* Stagger animation and transition delays for a faster, more noticeable ripple */
     @for ($i = 0; $i < 10; $i++)
         .preloader-gate-bar:nth-child({{ $i + 1 }}) {
             animation-delay: {{ $i * 0.1 }}s;
-            /* Faster stagger */
             transition-delay: {{ ($i < 5 ? $i : 9 - $i) * 0.08 }}s;
-            /* Faster centered exit */
         }
     @endfor
 
@@ -238,9 +215,7 @@
         }
     }
 
-    /* END: New Preloader CSS */
 
-    /* Hero section states */
     .hero-section {
         opacity: 0;
         transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -250,7 +225,6 @@
         opacity: 1;
     }
 
-    /* Animation elements initial state */
     .hero-text-element,
     .hero-specialty-element {
         opacity: 0;
@@ -259,7 +233,6 @@
             transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    /* Animation variants */
     .hero-text-element.fade-in-left {
         transform: translateX(-40px);
     }
@@ -268,14 +241,12 @@
         transform: translateX(40px);
     }
 
-    /* Active animation states */
     .hero-text-element.animated,
     .hero-specialty-element.animated {
         opacity: 1;
         transform: translate(0, 0);
     }
 
-    /* Custom animations */
     @keyframes spin-slow {
         from {
             transform: rotate(45deg);
@@ -351,7 +322,6 @@
         }
     }
 
-    /* Animation classes */
     .animate-spin-slow {
         animation: spin-slow 10s linear infinite;
     }
@@ -372,7 +342,6 @@
         animation: particle-float 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
     }
 
-    /* Gradient text enhancement */
     @supports (background-clip: text) {
         .bg-clip-text {
             -webkit-background-clip: text;
@@ -381,7 +350,6 @@
         }
     }
 
-    /* Prevent layout shifts */
     #hero h1,
     #hero .space-y-8>* {
         transform: translateZ(0);
@@ -396,14 +364,12 @@
         justify-content: center;
     }
 
-    /* Enhanced hover effects */
     .hero-specialty-element:hover {
         background-color: rgba(59, 130, 246, 0.1);
         transform: translateY(-2px) scale(1.05);
         box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
     }
 
-    /* Smooth transitions for all interactive elements */
     a,
     button,
     .cursor-pointer {
@@ -411,13 +377,12 @@
     }
 </style>
 
-{{-- Hero JavaScript --}}
 <script>
     class HeroController {
         constructor() {
             this.isLoaded = false;
             this.hasAnimatedOnce = false;
-            this.isCurrentlyVisible = true; // visible at start
+            this.isCurrentlyVisible = true;
             this.animationTimeouts = [];
 
             this.heroSection = document.getElementById('hero');
@@ -441,15 +406,14 @@
                 window.addEventListener('load', onPageLoad, {
                     once: true
                 });
-                // Fallback in case the load event is missed or for very fast loads
-                setTimeout(() => this.handleLoading(), 5000); // Increased fallback time
+                setTimeout(() => this.handleLoading(), 5000);
             }
         }
 
         handleLoading() {
-            if (this.isLoaded) return; // Prevent double execution
+            if (this.isLoaded) return;
 
-            const minLoadTime = 3800; // Increased minimum load time for a more relaxed transition
+            const minLoadTime = 3800;
             const startTime = Date.now();
 
             const finishLoading = () => {
@@ -459,14 +423,13 @@
                 setTimeout(() => {
                     if (this.preloader) {
                         this.preloader.classList.add('fade-out');
-                        // Listen for the transition on the preloader itself to hide it
                         this.preloader.addEventListener('transitionend', (e) => {
                             if (e.target === this.preloader) {
                                 this.preloader.style.display = 'none';
                             }
                         }, {
                             once: true
-                        }); // Ensure event listener is removed after first use
+                        });
                     }
 
                     this.heroSection.classList.add('loaded');
@@ -477,8 +440,7 @@
                     setTimeout(() => {
                         this.hasAnimatedOnce = true;
                         this.setupIntersectionObserver();
-                    }, 2000); // Increased delay before setting up observer/allowing re-animation
-
+                    }, 2000);
                 }, remainingTime);
             };
 
@@ -492,13 +454,10 @@
                 const entry = entries[0];
                 const isVisible = entry.isIntersecting && entry.intersectionRatio > 0.1;
 
-                // Only act if visibility state *changes* and initial animation has run
                 if (isVisible !== this.isCurrentlyVisible && this.hasAnimatedOnce) {
                     if (isVisible) {
-                        // Became visible: trigger the animations
                         this.triggerAnimations();
                     } else {
-                        // Became hidden: reset for next time
                         this.resetAnimations();
                     }
                     this.isCurrentlyVisible = isVisible;
@@ -512,9 +471,8 @@
 
         triggerAnimations() {
             this.clearAnimationTimeouts();
-            // Speed up subsequent animations after the initial one
             const speedMultiplier = this.hasAnimatedOnce ? 0.35 :
-                1; // Slightly slower speed multiplier for re-animation
+                1;
 
             this.animatedElements.forEach((element) => {
                 const delay = parseInt(element.dataset.delay) || 0;
@@ -539,7 +497,6 @@
 
         resetAnimations() {
             this.clearAnimationTimeouts();
-            // Immediately remove animation classes from all elements.
             this.animatedElements.forEach(element => {
                 element.classList.remove('animated', 'fade-in-left', 'fade-in-right');
             });
@@ -551,7 +508,6 @@
         }
     }
 
-    // Utility function
     function scrollToNextSection() {
         const sections = ['#about', '#projects', 'main', '[id]:not(#hero)'];
         for (const selector of sections) {
@@ -566,7 +522,6 @@
         }
     }
 
-    // Initialize when DOM is ready
     document.addEventListener('DOMContentLoaded', () => {
         const heroController = new HeroController();
         const particles = document.querySelectorAll('.particle');
