@@ -8,8 +8,8 @@
         @endfor
     </div>
     <div id="preloader-text"
-        class="absolute text-white text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl font-extrabold">
-        <span class="font-montserrat tracking-wider">CDM</span>
+        class="absolute text-white text-xs sm:text-sm md:text-base lg:text-xl xl:text-2xl font-extrabold">
+        <span class="font-montserrat tracking-wider">UNFOLDING THE UNKNOWN</span>
     </div>
 </div>
 
